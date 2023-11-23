@@ -1,48 +1,80 @@
 package com.example.wizardingworld
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.VideoView
-import android.media.MediaPlayer
-import android.net.Uri
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
+import com.example.wizardingworld.Fragments.BookFragment
+import com.example.wizardingworld.Fragments.BookListFragment
+import com.example.wizardingworld.Fragments.CharacterFragment
+import com.example.wizardingworld.Fragments.CharactersListFragment
+import com.example.wizardingworld.Fragments.MainPageFragment
+import com.example.wizardingworld.Fragments.SpellsListFragment
+import com.example.wizardingworld.sampledata.booksData.Book
+import com.example.wizardingworld.sampledata.charactersData.Character
 
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), MainPageFragment.Callbacks, BookListFragment.Callbacks, CharactersListFragment.Callbacks {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val videoView = findViewById<VideoView>(R.id.myVideo)
-        val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.background)
-        videoView.setVideoURI(uri)
-        videoView.start()
 
-        videoView.setOnPreparedListener(MediaPlayer.OnPreparedListener { mp ->
-            mp.isLooping = true
-        })
 
-        val spinner = findViewById<Spinner>(R.id.spinner1)
 
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.wizard_elements,
-            R.layout.my_selected_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(R.layout.my_dropdown_item)
-            spinner.adapter = adapter
+        val currentFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_container)
+        if (currentFragment == null) {
+            val fragment = MainPageFragment()
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_container, fragment)
+                .commit()
         }
 
-        spinner.onItemSelectedListener = this
+
+
+    }
+    override fun onCategorySelected(itemId: Long) {
+
+        var fragment = CharactersListFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+
+
+//
+//        if(itemId==0.toLong())
+//            fragment = BookListFragment()
+//        else if(itemId==1.toLong())
+//            fragment = CharactersListFragment()
+
+//        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit()
+
     }
 
-    override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
+    override fun onBookSelected(clickedBook: Book){
+        val fragment = BookFragment.newInstance(clickedBook)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+
+
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>) {
+    override fun onCharacterSelected(character: Character) {
+        val fragment = CharacterFragment.newInstance(character)
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
+
+
 }
