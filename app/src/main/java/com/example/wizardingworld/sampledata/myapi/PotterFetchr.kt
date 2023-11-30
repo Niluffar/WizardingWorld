@@ -4,6 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.wizardingworld.sampledata.booksData.Book
 import com.example.wizardingworld.sampledata.booksData.BookResponse
+import com.example.wizardingworld.sampledata.moviesData.Movie
+import com.example.wizardingworld.sampledata.moviesData.MovieResponse
+import com.example.wizardingworld.sampledata.potionsData.Potion
+import com.example.wizardingworld.sampledata.potionsData.PotionResponse
 import com.example.wizardingworld.sampledata.spellsData.Spell
 import com.example.wizardingworld.sampledata.spellsData.SpellResponse
 import retrofit2.Call
@@ -64,6 +68,52 @@ class PotterFetchr {
 
 
                 responseLiveData.value = spells
+            }
+        })
+        return responseLiveData
+    }
+
+    fun fetchMovies(): LiveData<List<Movie>> {
+        val responseLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
+        val potterRequest: Call<MovieResponse> = potterApi.fetchMovies()
+        potterRequest.enqueue(object : Callback<MovieResponse> {
+            override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
+
+            }
+            override fun onResponse(
+                call: Call<MovieResponse>,
+                response: Response<MovieResponse>
+            ) {
+
+
+                val movieResponse: MovieResponse? = response.body()
+                var movies: List<Movie> = movieResponse?.movies?: mutableListOf()
+
+
+                responseLiveData.value = movies
+            }
+        })
+        return responseLiveData
+    }
+
+    fun fetchPotions(): LiveData<List<Potion>> {
+        val responseLiveData: MutableLiveData<List<Potion>> = MutableLiveData()
+        val potterRequest: Call<PotionResponse> = potterApi.fetchPotions()
+        potterRequest.enqueue(object : Callback<PotionResponse> {
+            override fun onFailure(call: Call<PotionResponse>, t: Throwable) {
+
+            }
+            override fun onResponse(
+                call: Call<PotionResponse>,
+                response: Response<PotionResponse>
+            ) {
+
+
+                val potionResponse: PotionResponse? = response.body()
+                var potions: List<Potion> = potionResponse?.potions?: mutableListOf()
+
+
+                responseLiveData.value = potions
             }
         })
         return responseLiveData

@@ -9,7 +9,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_toEndOf="@+id/book_cover"
-        android:padding="8dp">
+        android:padding="8dp"
+    android:background="#232126">
 
         <TextView
             android:id="@+id/name"
@@ -18,33 +19,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="5dp"
             android:textSize="17dp"
+            android:textColor="#a38e15"
             android:text="Spell Name"/>
-        <TextView
-            android:id="@+id/category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="15dp"
-            android:text="Category"/>
 
-        <TextView
-            android:id="@+id/light"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="15dp"
-            android:text="Light"/>
-
-
-        <TextView
-            android:id="@+id/effect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="15dp"
-            android:text="Author"/>
 
     </LinearLayout>

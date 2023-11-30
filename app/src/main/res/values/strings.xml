@@ -2,7 +2,7 @@
     <string name="app_name">WizardingWorld</string>
     <string name="search">Write here...</string>
     <string name="select">Select Item</string>
-    <string name="button">️S️earch 🪄️</string>
+    <string name="button">️Launch 🪄️</string>
 
     <string-array name="wizard_elements">
         <item>Books</item>

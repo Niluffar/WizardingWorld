@@ -10,7 +10,9 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.VideoView
 import androidx.fragment.app.Fragment
@@ -34,6 +36,7 @@ class MainPageFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private val packageName = "com.example.wizardingworld"
     private var itemSelectedId: Long = 0
     private lateinit var searchBtn: Button
+
 //    private lateinit var characters: Button
 
 
@@ -49,6 +52,7 @@ class MainPageFragment : Fragment(), AdapterView.OnItemSelectedListener {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_main_page, container, false)
+
         searchBtn = view.findViewById(R.id.search_btn)
         val videoView = view.findViewById<VideoView>(R.id.myVideo)
         val uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.background)
@@ -77,12 +81,7 @@ class MainPageFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         //      search Button listener
         searchBtn.setOnClickListener { view: View ->
-                    Toast.makeText(
-                        getActivity(),
-                        itemSelectedId.toString(),
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
+
             callbacks?.onCategorySelected(itemSelectedId)
 
         }

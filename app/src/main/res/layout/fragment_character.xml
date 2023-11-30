@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/details_container"
     android:layout_width="match_parent"
-    android:layout_height="850dp"
-    android:orientation="vertical"
-    android:background="@color/black">
+    android:layout_height="match_parent"
+    android:background="#232126">
 
-    <RelativeLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="700dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#232126">
 
         <ImageView
             android:id="@+id/image"
@@ -19,144 +19,287 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-
             android:layout_marginStart="55dp"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <LinearLayout
-            android:layout_width="152dp"
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/my_custom_font"
+        android:text="Book Title"
+        android:textAlignment="center"
+        android:textColor="#a38e15"
+        android:textSize="50dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="20dp">
+    <LinearLayout
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/name"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/ancestry_tag"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="-259dp"
-            android:layout_marginTop="439dp"
-            android:layout_toEndOf="@+id/image"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Ancestry"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="5dp"
-                android:text="Book Title"
-                android:textSize="17dp" />
-
-            <TextView
-                android:id="@+id/ancestry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="ancestry"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="Gender"
-                android:textSize="15dp" />
-
-
-            <TextView
-                android:id="@+id/hairColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="Author"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/house"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="house"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/patronus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="house"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="146dp"
+        <TextView
+            android:id="@+id/gender_tag"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="-88dp"
-            android:layout_marginTop="439dp"
-            android:layout_toEndOf="@+id/image"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Gender"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/wizard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="wizard"
-                android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/alive"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="alive"
-                android:textSize="15dp" />
+        <TextView
+            android:id="@+id/hairColor_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Hair Color"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/actor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="actor"
-                android:textSize="15dp" />
+        <TextView
+            android:id="@+id/house_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="House"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/dateOfBirth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="house"
-                android:textSize="15dp" />
+        <TextView
+            android:id="@+id/patronus_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Patronus"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/died"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="house"
-                android:textSize="15dp" />
+        <TextView
+            android:id="@+id/wizard_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Wizard"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/eyeColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:text="house"
-                android:textSize="15dp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/alive_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Alive"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/actor_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Actor"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
 
+        <TextView
+            android:id="@+id/dateOfBirth_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Date of Birth"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/died_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Died"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/eyeColor_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Eye Color"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/name"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/ancestry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="ancestry"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Gender"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+
+        <TextView
+            android:id="@+id/hairColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Author"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="house"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/patronus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="house"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/wizard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="wizard"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/alive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="alive"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/actor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="actor"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/dateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="house"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/died"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="house"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+
+        <TextView
+            android:id="@+id/eyeColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="house"
+            android:textSize="15dp"
+            android:textColor="#c2c1ba"/>
+    </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
+</ScrollView>

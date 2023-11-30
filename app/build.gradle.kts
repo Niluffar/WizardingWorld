@@ -14,6 +14,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -41,7 +42,7 @@ android {
 
 dependencies {
     implementation("com.loopj.android:android-async-http:1.4.9")
-    implementation("androidx.core:core-ktx:1.9.0")
+//    implementation("androidx.core:core-ktx:1.2.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("com.google.android.material:material:1.10.0")
@@ -55,6 +56,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.4.0")
     implementation ("com.github.bumptech.glide:glide:4.14.2")
     implementation("com.google.firebase:firebase-crashlytics-buildtools:2.9.9")
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

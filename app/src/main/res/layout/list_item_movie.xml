@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="#232126">
     <ImageView
-        android:id="@+id/book_cover"
+        android:id="@+id/poster"
         android:layout_width="139dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
@@ -19,36 +19,37 @@
         android:layout_marginTop="3dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
-        android:layout_toEndOf="@+id/book_cover"
+        android:layout_toEndOf="@+id/poster"
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/book_title"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="5dp"
-            android:textSize="18dp"
             android:text="Book Title"
+            android:textSize="18dp"
             android:textColor="#a38e15"
             android:layout_marginBottom="15dp"
             android:textStyle="bold"/>
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginEnd="10dp">
             <TextView
-                android:id="@+id/book_release_date_tag"
+                android:id="@+id/release_date_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -59,34 +60,23 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/book_page_num_tag"
+                android:id="@+id/running_time_tag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:textSize="14dp"
-                android:text="Pages"
+                android:text="Running Time"
                 android:textColor="#c2c1ba"
                 android:textStyle="bold"/>
 
-
-            <TextView
-                android:id="@+id/book_author_tag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:textSize="14dp"
-                android:text="Author"
-                android:textColor="#c2c1ba"
-                android:textStyle="bold"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
         <TextView
-            android:id="@+id/book_release_date"
+            android:id="@+id/release_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -96,7 +86,7 @@
             android:textColor="#c2c1ba"/>
 
         <TextView
-            android:id="@+id/book_page_num"
+            android:id="@+id/running_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -104,18 +94,8 @@
             android:textSize="14dp"
             android:text="Pages"
             android:textColor="#c2c1ba"/>
+</LinearLayout>
 
-
-        <TextView
-            android:id="@+id/book_author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:textSize="14dp"
-            android:text="Author"
-            android:textColor="#c2c1ba"/>
-        </LinearLayout>
-        </LinearLayout>
+</LinearLayout>
     </LinearLayout>
 </RelativeLayout>
